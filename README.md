@@ -1,6 +1,4 @@
-# MoWAM
-
-## Explicit Future Motion Prediction for Efficient World Action Models
+# MoWAM：Explicit Future Motion Prediction for Efficient World Action Models
 
 **Jiayu Wang¹, Bin Zhu², Yue Yu¹, Jingjing Chen³**\*
 
