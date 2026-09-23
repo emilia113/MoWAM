@@ -1,13 +1,16 @@
 # MoWAM：Explicit Future Motion Prediction for Efficient World Action Models
 
-**Jiayu Wang¹, Bin Zhu², Yue Yu¹, Jingjing Chen³**\*
+[**Jiayu Wang**](https://github.com/emilia113)<sup>1</sup>,
+[**Bin Zhu**](https://binzhubz.github.io/)<sup>2</sup>,
+[**Yue Yu**](https://github.com/Yue-105)<sup>1</sup>,
+[**Jingjing Chen**](https://jingjing1.github.io/)<sup>3*</sup>
 
 ¹ College of Computer Science and Artificial Intelligence, Fudan University  
 ² Singapore Management University  
 ³ Institute of Trustworthy Embodied AI, Fudan University  
-*Corresponding author
+<sup>*</sup> Corresponding author
 
-[**Paper**](https://arxiv.org/abs/2609.20709) · [**Demonstrations**](#real-world-demonstrations) · [**Overview Video**](https://emilia113.github.io/MoWAM/#overview-title)
+[**Paper**](https://arxiv.org/abs/2609.20709) · [**Demonstrations**](#real-world-demonstrations) · [**Overview Video**](https://emilia113.github.io/MoWAM/#overview-title) · [**Citation**](#citation)
 
 [![MoWAM research video — opening frame](docs/assets/overview-opening-frame.jpg)](docs/assets/MoWAM-overview.mp4)
 
@@ -136,3 +139,15 @@ All ablation variants are trained on LIBERO-Long and evaluated directly on its c
 
 Predicted motion estimates the resulting execution substantially more accurately in both ID and OOD settings. The OOD error is higher, while its advantage over action projection remains.
 
+## Citation
+
+If you find this work useful, please cite:
+
+```bibtex
+@article{wang2026mowam,
+  title={MoWAM: Explicit Future Motion Prediction for Efficient World Action Models},
+  author={Wang, Jiayu and Zhu, Bin and Yu, Yue and Chen, Jingjing},
+  journal={arXiv preprint arXiv:2609.20709},
+  year={2026}
+}
+```
