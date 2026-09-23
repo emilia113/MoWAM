@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>MoWAM: Explicit Future Motion Prediction for Efficient World Action Models</title>
+  <meta name="description" content="MoWAM uses explicit future motion prediction for efficient world action models. Research paper, method, real-world demonstrations, and experimental results.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header class="stage title-stage" aria-label="Paper title and authors">
+      <div class="stage-inner paper-header">
+      <h1><span>MoWAM:</span> Explicit Future Motion Prediction<br class="desktop-break"> for Efficient World Action Models</h1>
+      <p class="authors">Jiayu Wang<sup>1</sup>, Bin Zhu<sup>2</sup>, Yue Yu<sup>1</sup>, Jingjing Chen<sup>3*</sup></p>
+      <div class="affiliations">
+        <p><sup>1</sup> College of Computer Science and Artificial Intelligence, Fudan University</p>
+        <p><sup>2</sup> Singapore Management University</p>
+        <p><sup>3</sup> Institute of Trustworthy Embodied AI, Fudan University</p>
+      </div>
+      <p class="corresponding">* Corresponding author</p>
+      <div class="resource-links"><a href="assets/MoWAM-paper.pdf" target="_blank" rel="noopener" aria-label="Read the paper PDF"><img class="arxiv-logo" src="assets/arxiv-logo.jpg" alt="arXiv"><span>Paper (PDF)</span></a><a href="#demos">Demonstrations</a></div>
+    </div>
+    </header>
+    <section class="stage overview-stage" aria-labelledby="overview-title">
+      <div class="stage-inner">
+        <div class="section-heading"><p class="section-label">MoWAM</p><h2 id="overview-title">Video Overview</h2></div>
+        <figure class="overview-video">
+      <video controls playsinline preload="metadata" poster="assets/overview-opening-frame.jpg" aria-label="MoWAM research overview video"><source src="assets/MoWAM-overview.mp4" type="video/mp4">Your browser does not support video playback.</video>
+      <figcaption>MoWAM predicts future robot motion together with actions, avoiding dense future video generation at inference.</figcaption>
+    </figure>
+      </div>
+    </section>
+    <section class="stage abstract-stage" id="idea" aria-labelledby="abstract-title">
+      <div class="stage-inner text-section">
+      <h2 id="abstract-title">Abstract</h2>
+      <p>World Action Models (WAMs) improve robot policy learning by incorporating future dynamics, yet generating future videos at inference introduces substantial computational overhead. We propose <strong>MoWAM</strong>, an efficient WAM that replaces future video generation with explicit future motion prediction. Structured end-effector motion provides a compact representation of how the robot is expected to evolve under the current scene and interaction constraints. A Mixture-of-Transformer architecture learns future visual dynamics during training while jointly predicting motion and action, allowing future video generation to be removed at inference. The compact motion representation also enables sampling multiple motion–action candidates and selecting among them with a motion-aware task-progress verifier. Experiments on LIBERO, LIBERO-Plus, and real-world manipulation tasks demonstrate strong in-domain performance, improved out-of-distribution robustness, and efficient inference-time candidate exploration.</p>
+    </div>
+    </section>
+    <section class="stage method-stage" id="method" aria-labelledby="method-title">
+      <div class="stage-inner">
+        <div class="section-heading"><p class="section-label">MoWAM Framework</p><h2 id="method-title">Method</h2></div>
+        <div class="method-layout"><figure class="method-figure"><img src="assets/framework.jpg" alt="MoWAM architecture showing structured gripper keypoints, the Action-Motion Transformer, and the Video Transformer. Future video generation is used only during training." width="3259" height="2293" loading="lazy"><figcaption>The Video Transformer learns future visual dynamics during training. At inference, its observation representation conditions the Action-Motion Transformer, which jointly predicts robot actions and future motion.</figcaption></figure><div class="method-description"><p><strong>Structured motion.</strong> MoWAM represents the end effector using the gripper center, fingertip span, and relative palm offset. Their temporal changes and relative geometry describe expected future execution.</p><p><strong>Motion and action prediction.</strong> The Action-Motion Transformer jointly predicts actions and future motion from the observation features, allowing predicted motion to inform action generation. Future frames support training but are not generated during policy execution.</p></div></div>
+      </div>
+    </section>
+    <section class="stage demo-stage demo-stage-1" id="demos" aria-labelledby="demos-title">
+      <div class="stage-inner demo-inner">
+        <div class="section-heading"><p class="section-label">Real-World Demonstrations <span class="section-count">1 / 3</span></p><h2 id="demos-title">Pick Banana</h2><p class="section-intro">Pick up the banana and place it in the basket.</p><p class="robot-label">Franka Research 3 · Successful MoWAM executions</p></div>
+        <div class="demo-pair"><figure class="demo-clip"><video controls playsinline preload="metadata" aria-label="MoWAM pick banana, trial 1"><source src="assets/banana-01.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>Trial 1</figcaption></figure><figure class="demo-clip"><video controls playsinline preload="metadata" aria-label="MoWAM pick banana, trial 2"><source src="assets/banana-02.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>Trial 2</figcaption></figure></div>
+      </div>
+    </section>
+    <section class="stage demo-stage demo-stage-2" id="demo-bowls" aria-labelledby="demo-bowls-title">
+      <div class="stage-inner demo-inner">
+        <div class="section-heading"><p class="section-label">Real-World Demonstrations <span class="section-count">2 / 3</span></p><h2 id="demo-bowls-title">Stack Bowls</h2><p class="section-intro">Pick up one bowl and stack it inside the other.</p><p class="robot-label">Franka Research 3 · Successful MoWAM executions</p></div>
+        <div class="demo-pair"><figure class="demo-clip"><video controls playsinline preload="metadata" aria-label="MoWAM stack bowls, trial 1"><source src="assets/bowls-01.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>Trial 1</figcaption></figure><figure class="demo-clip"><video controls playsinline preload="metadata" aria-label="MoWAM stack bowls, trial 2"><source src="assets/bowls-02.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>Trial 2</figcaption></figure></div>
+      </div>
+    </section>
+    <section class="stage demo-stage demo-stage-3" id="demo-drawer" aria-labelledby="demo-drawer-title">
+      <div class="stage-inner demo-inner">
+        <div class="section-heading"><p class="section-label">Real-World Demonstrations <span class="section-count">3 / 3</span></p><h2 id="demo-drawer-title">Close Drawer</h2><p class="section-intro">Close the open drawer through controlled contact.</p><p class="robot-label">Franka Research 3 · Successful MoWAM executions</p></div>
+        <div class="demo-pair"><figure class="demo-clip"><video controls playsinline preload="metadata" aria-label="MoWAM close drawer, trial 1"><source src="assets/drawer-01.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>Trial 1</figcaption></figure><figure class="demo-clip"><video controls playsinline preload="metadata" aria-label="MoWAM close drawer, trial 2"><source src="assets/drawer-02.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>Trial 2</figcaption></figure></div>
+      </div>
+    </section>
+    <section class="stage results-stage benchmark-stage" id="results" aria-labelledby="results-title"><div class="stage-inner">
+      <div class="section-heading"><p class="section-label">Experimental Results</p><h2 id="results-title">LIBERO</h2><p class="section-intro">Task success across all four suites. All 13 methods reported in the paper are shown.</p></div>
+      <div class="table-surface"><div class="table-scroll" tabindex="0" role="region" aria-label="LIBERO; scroll horizontally on small screens"><table><caption>LIBERO</caption><thead><tr><th scope="col">Method</th><th scope="col">Robo. P.T.</th><th scope="col">Spatial</th><th scope="col">Object</th><th scope="col">Goal</th><th scope="col">Long</th><th scope="col">Average</th></tr></thead><tbody><tr><th scope="row">OpenVLA</th><td>✓</td><td>84.7</td><td>88.4</td><td>79.2</td><td>53.7</td><td>76.5</td></tr><tr><th scope="row">OpenVLA-OFT</th><td>✓</td><td>97.2</td><td>97.8</td><td>96</td><td>96</td><td>96.75</td></tr><tr><th scope="row">UniVLA</th><td>✓</td><td>95.4</td><td>94.8</td><td>94.8</td><td>90.8</td><td>93.95</td></tr><tr><th scope="row">π₀</th><td>✓</td><td>96.8</td><td>98.8</td><td>95.8</td><td>85.2</td><td>94.1</td></tr><tr><th scope="row">π₀-FAST</th><td>✓</td><td>97.8</td><td>97.8</td><td>88.2</td><td>61</td><td>86.2</td></tr><tr><th scope="row">π₀.₅</th><td>✓</td><td>98.8</td><td>98.2</td><td>98</td><td>92.4</td><td>96.9</td></tr><tr><th scope="row">LingBot-VA</th><td>✓</td><td>98.5</td><td>99.6</td><td>97.2</td><td>98.5</td><td>98.5</td></tr><tr><th scope="row">Motus</th><td>✓</td><td>96.8</td><td>99.8</td><td>96.6</td><td>97.6</td><td>97.7</td></tr><tr><th scope="row">LaWAM</th><td>✓</td><td>99</td><td>96</td><td>97.2</td><td>93.4</td><td>96.4</td></tr><tr><th scope="row">Fast-WAM</th><td>✗</td><td>96.6</td><td>99.2</td><td>94.6</td><td>95.6</td><td>96.5</td></tr><tr><th scope="row">IDM-WAM</th><td>✗</td><td>98.6</td><td>99.4</td><td>98.4</td><td>96.4</td><td>98.2</td></tr><tr><th scope="row">Joint-WAM</th><td>✗</td><td>99</td><td>99.2</td><td>99</td><td>97.8</td><td>98.75</td></tr><tr class="ours"><th scope="row">MoWAM</th><td>✗</td><td>98.8</td><td>99.8</td><td>99</td><td>97.8</td><td>98.9</td></tr></tbody></table></div><p class="table-note">Success rates (%). Robo. P.T. (robotic embodied pretraining): ✓ = used; ✗ = not used. The first six baselines are VLA-based; LingBot-VA through Joint-WAM are WAM-based.</p></div>
+    </div></section>
+    <section class="stage results-stage benchmark-stage results-stage-2" id="results-ood" aria-labelledby="results-ood-title"><div class="stage-inner">
+      <div class="section-heading"><p class="section-label">Experimental Results</p><h2 id="results-ood-title">LIBERO-Plus</h2><p class="section-intro">All 11 methods reported in the paper, evaluated across seven distribution shifts with LIBERO-trained checkpoints.</p></div>
+      <p class="protocol-note"><strong>No LIBERO-Plus training data.</strong> All methods are evaluated directly with checkpoints trained on LIBERO. No LIBERO-Plus data is used for training or fine-tuning, and no additional adaptation is performed before evaluation.</p><div class="table-surface"><div class="table-scroll" tabindex="0" role="region" aria-label="LIBERO-Plus; scroll horizontally on small screens"><table><caption>LIBERO-Plus</caption><thead><tr><th scope="col">Method</th><th scope="col">Robo. P.T.</th><th scope="col">Objects</th><th scope="col">Camera</th><th scope="col">Initial</th><th scope="col">Light</th><th scope="col">Background</th><th scope="col">Sensor</th><th scope="col">Language</th><th scope="col">Average</th><th scope="col">Latency (ms)</th></tr></thead><tbody><tr><th scope="row">OpenVLA</th><td>✓</td><td>53</td><td>2</td><td>15</td><td>24</td><td>54</td><td>32</td><td>44</td><td>32.00</td><td>128.71</td></tr><tr><th scope="row">OpenVLA-OFT</th><td>✓</td><td>73</td><td>65</td><td>27</td><td>94</td><td>89</td><td>70</td><td>87</td><td>72.14</td><td>103.3</td></tr><tr><th scope="row">UniVLA</th><td>✓</td><td>76</td><td>8</td><td>62</td><td>77</td><td>90</td><td>19</td><td>80</td><td>58.86</td><td>492.2</td></tr><tr><th scope="row">π₀</th><td>✓</td><td>81</td><td>62</td><td>40</td><td>92</td><td>81</td><td>75</td><td>70</td><td>71.57</td><td>62.9</td></tr><tr><th scope="row">π₀-FAST</th><td>✓</td><td>73</td><td>62</td><td>26</td><td>72</td><td>76</td><td>70</td><td>78</td><td>65.29</td><td>274.22</td></tr><tr><th scope="row">Motus</th><td>✓</td><td>89</td><td>48</td><td>88</td><td>83</td><td>78</td><td>57</td><td>89</td><td>76.00</td><td>1621.9</td></tr><tr><th scope="row">LaWAM</th><td>✓</td><td>84</td><td>37</td><td>70</td><td>92</td><td>95</td><td>73</td><td>98</td><td>78.43</td><td>108.52</td></tr><tr><th scope="row">Fast-WAM</th><td>✗</td><td>82</td><td>42</td><td>74</td><td>85</td><td>63</td><td>72</td><td>75</td><td>70.43</td><td>260.1</td></tr><tr><th scope="row">IDM-WAM</th><td>✗</td><td>84</td><td>59</td><td>79</td><td>90</td><td>68</td><td>86</td><td>95</td><td>80.14</td><td>995.4</td></tr><tr><th scope="row">Joint-WAM</th><td>✗</td><td>85</td><td>51</td><td>91</td><td>95</td><td>67</td><td>78</td><td>97</td><td>80.57</td><td>766.3</td></tr><tr class="ours"><th scope="row">MoWAM</th><td>✗</td><td>87</td><td>51</td><td>86</td><td>96</td><td>68</td><td>86</td><td>96</td><td>81.43</td><td>293.5</td></tr></tbody></table></div><p class="table-note">Success rates (%); latency is milliseconds per action chunk on one RTX 5090 with identical action horizons. Robo. P.T. (robotic embodied pretraining): ✓ = used; ✗ = not used.</p></div>
+    </div></section>
+    <section class="stage results-stage results-stage-3" id="results-real" aria-labelledby="results-real-title"><div class="stage-inner">
+      <div class="section-heading"><p class="section-label">Experimental Results</p><h2 id="results-real-title">Real-World Evaluation</h2><p class="section-intro">Pick Banana, Stack Bowls, and Close Drawer on a Franka Research 3 robot.</p></div>
+      <div class="table-surface"><div class="table-scroll" tabindex="0" role="region" aria-label="Real-World Evaluation; scroll horizontally on small screens"><table><caption>Real-World Evaluation</caption><thead><tr><th scope="col">Method</th><th scope="col">Robo. P.T.</th><th scope="col">Pick Banana</th><th scope="col">Stack Bowls</th><th scope="col">Close Drawer</th><th scope="col">Average</th><th scope="col">Latency (ms)</th></tr></thead><tbody><tr><th scope="row">Motus</th><td>✓</td><td>65</td><td>65</td><td>85</td><td>71.67</td><td>1621.9</td></tr><tr><th scope="row">Fast-WAM</th><td>✗</td><td>30</td><td>85</td><td>20</td><td>45</td><td>260.1</td></tr><tr class="ours"><th scope="row">MoWAM</th><td>✗</td><td>65</td><td>95</td><td>80</td><td>80</td><td>293.5</td></tr></tbody></table></div><p class="table-note">100 demonstrations and 20 standard evaluation trials per task. Success rates (%); latency in milliseconds per action chunk. Robo. P.T. (robotic embodied pretraining): ✓ = used; ✗ = not used.</p></div>
+    </div></section>
+    <section class="stage scaling-stage" id="results-scaling" aria-labelledby="results-scaling-title"><div class="stage-inner">
+      <div class="section-heading"><p class="section-label">Experimental Results</p><h2 id="results-scaling-title">Inference-Time Scaling</h2></div>
+      <figure class="scaling-figure"><img src="assets/scaling.png" width="4437" height="2345" loading="lazy" alt="Paper scaling experiment: Pick Banana success is 65, 65, 75, and 80 percent at K=1,2,4,8. Latency bars and additional-memory lines compare four WAM variants at K=1,2,4,8,16,32; IDM-WAM is out of memory at K=32."><figcaption>Left: success with motion-aware candidate verification. Right: latency (bars, top axis) and additional GPU memory (lines, bottom axis). The original paper figure includes all candidate counts and all four WAM variants.</figcaption></figure><div class="table-scroll" tabindex="0" role="region" aria-label="Pick Banana success by candidate count; scroll horizontally on small screens"><table><caption>Pick Banana success by candidate count</caption><thead><tr><th scope="col">Number of candidates K</th><th scope="col">1</th><th scope="col">2</th><th scope="col">4</th><th scope="col">8</th></tr></thead><tbody><tr><th scope="row">Success rate (%)</th><td>65</td><td>65</td><td>75</td><td>80</td></tr></tbody></table></div><p class="result-explanation">MoWAM scales close to Fast-WAM. Joint-WAM and IDM-WAM become substantially more expensive as K increases, and IDM-WAM runs out of memory at K = 32. MoWAM generates eight candidates in less time than either full-visual-future variant requires for one candidate.</p>
+    </div></section>
+  </main>
+</body>
+</html>
