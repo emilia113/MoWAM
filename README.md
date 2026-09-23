@@ -31,49 +31,58 @@ MoWAM can sample several motion–action pairs for the same observation. A verif
 
 Successful MoWAM executions on a **Franka Research 3** robot. Two videos are available for each task.
 
-
 ### Pick Banana
 <sub>Pick up the banana and place it in the basket.</sub>
 
 <table>
-  <tr>
-    <td width="50%">
-      <video src="https://github.com/user-attachments/assets/d85776e0-f62a-4224-acd6-d6b0559c2199" controls width="400"></video>
-    </td>
-    <td width="50%">
-      <video src="https://github.com/user-attachments/assets/2f5f5dfd-f9ef-4a04-a6e4-50d89c325395" controls width="400"></video>
-    </td>
-  </tr>
-</table>
+<tr>
+<td width="50%">
 
+https://github.com/user-attachments/assets/d85776e0-f62a-4224-acd6-d6b0559c2199
+
+</td>
+<td width="50%">
+
+https://github.com/user-attachments/assets/2f5f5dfd-f9ef-4a04-a6e4-50d89c325395
+
+</td>
+</tr>
+</table>
 
 ### Stack Bowls
 <sub>Pick up one bowl and stack it inside the other.</sub>
 
 <table>
-  <tr>
-    <td width="50%">
-      <video src="https://github.com/user-attachments/assets/154e7309-dcc7-4baf-94c7-7fa6e4e4f7fe" controls width="400"></video>
-    </td>
-    <td width="50%">
-      <video src="https://github.com/user-attachments/assets/13b5288d-0887-4360-acec-89902cb21f45" controls width="400"></video>
-    </td>
-  </tr>
-</table>
+<tr>
+<td width="50%">
 
+https://github.com/user-attachments/assets/154e7309-dcc7-4baf-94c7-7fa6e4e4f7fe
+
+</td>
+<td width="50%">
+
+https://github.com/user-attachments/assets/13b5288d-0887-4360-acec-89902cb21f45
+
+</td>
+</tr>
+</table>
 
 ### Close Drawer
 <sub>Close the open drawer.</sub>
 
 <table>
-  <tr>
-    <td width="50%">
-      <video src="https://github.com/user-attachments/assets/edc1ac95-40b8-44b1-b485-5140f08b744c" controls width="400"></video>
-    </td>
-    <td width="50%">
-      <video src="https://github.com/user-attachments/assets/653a2b5f-767b-4935-b7ad-5ad19f19ce99" controls width="400"></video>
-    </td>
-  </tr>
+<tr>
+<td width="50%">
+
+https://github.com/user-attachments/assets/edc1ac95-40b8-44b1-b485-5140f08b744c
+
+</td>
+<td width="50%">
+
+https://github.com/user-attachments/assets/653a2b5f-767b-4935-b7ad-5ad19f19ce99
+
+</td>
+</tr>
 </table>
 
 
