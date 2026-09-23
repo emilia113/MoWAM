@@ -7,7 +7,7 @@
 ³ Institute of Trustworthy Embodied AI, Fudan University  
 *Corresponding author
 
-[**Paper (PDF)**](docs/assets/MoWAM-paper.pdf) · [**Demonstrations**](#real-world-demonstrations) · [**Overview Video**](docs/assets/MoWAM-overview.mp4)
+[**Paper**](https://arxiv.org/abs/2609.20709) · [**Demonstrations**](#real-world-demonstrations) · [**Overview Video**](https://emilia113.github.io/MoWAM/#overview-title)
 
 [![MoWAM research video — opening frame](docs/assets/overview-opening-frame.jpg)](docs/assets/MoWAM-overview.mp4)
 
@@ -31,16 +31,52 @@ MoWAM can sample several motion–action pairs for the same observation. A verif
 
 Successful MoWAM executions on a **Franka Research 3** robot. Two videos are available for each task.
 
-**Pick Banana** · [Demo 1](docs/assets/banana-01.mp4) · [Demo 2](docs/assets/banana-02.mp4)  
+
+### Pick Banana
 <sub>Pick up the banana and place it in the basket.</sub>
 
-**Stack Bowls** · [Demo 1](docs/assets/bowls-01.mp4) · [Demo 2](docs/assets/bowls-02.mp4)  
+<table>
+  <tr>
+    <td width="50%">
+      <video src="https://github.com/user-attachments/assets/d85776e0-f62a-4224-acd6-d6b0559c2199" controls width="400"></video>
+    </td>
+    <td width="50%">
+      <video src="https://github.com/user-attachments/assets/2f5f5dfd-f9ef-4a04-a6e4-50d89c325395" controls width="400"></video>
+    </td>
+  </tr>
+</table>
+
+
+### Stack Bowls
 <sub>Pick up one bowl and stack it inside the other.</sub>
 
-**Close Drawer** · [Demo 1](docs/assets/drawer-01.mp4) · [Demo 2](docs/assets/drawer-02.mp4)  
-<sub>Close the open drawer through controlled contact.</sub>
+<table>
+  <tr>
+    <td width="50%">
+      <video src="https://github.com/user-attachments/assets/154e7309-dcc7-4baf-94c7-7fa6e4e4f7fe" controls width="400"></video>
+    </td>
+    <td width="50%">
+      <video src="https://github.com/user-attachments/assets/13b5288d-0887-4360-acec-89902cb21f45" controls width="400"></video>
+    </td>
+  </tr>
+</table>
 
-[Watch the full research video](docs/assets/MoWAM-overview.mp4).
+
+### Close Drawer
+<sub>Close the open drawer.</sub>
+
+<table>
+  <tr>
+    <td width="50%">
+      <video src="https://github.com/user-attachments/assets/edc1ac95-40b8-44b1-b485-5140f08b744c" controls width="400"></video>
+    </td>
+    <td width="50%">
+      <video src="https://github.com/user-attachments/assets/653a2b5f-767b-4935-b7ad-5ad19f19ce99" controls width="400"></video>
+    </td>
+  </tr>
+</table>
+
+
 
 ## Experimental Results
 
@@ -98,7 +134,12 @@ Twenty evaluation trials per task, with 100 collected demonstrations per task.
 
 ### Inference-Time Scaling: Success, Latency, and Memory
 
-![Candidate scaling: Pick Banana success, action latency, and additional GPU memory](docs/assets/scaling.png)
+<p align="center">
+  <img src="docs/assets/scaling.png"
+       alt="Candidate scaling: Pick Banana success, action latency, and additional GPU memory"
+       width="75%">
+</p>
+
 
 | Number of candidates K | 1 | 2 | 4 | 8 |
 | --- | ---: | ---: | ---: | ---: |
