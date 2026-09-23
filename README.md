@@ -151,14 +151,6 @@ The figure reports action latency and additional GPU memory at K = 1–32; the t
 
 All ablation variants are trained on LIBERO-Long and evaluated directly on its corresponding LIBERO-Plus perturbations, without LIBERO-Plus training or fine-tuning. MoWAM reaches **76.00%** average success. Removing motion gives **65.71%**; removing the dynamics or structure loss gives **69.14%** or **73.71%**. Without Video DiT training, success is **33.14%**; without motion conditioning, it is **70.86%**.
 
-### Accuracy of Future Motion Prediction
-
-Predicted motion and action-projected motion are compared with actual execution trajectories in image pixels on LIBERO. For Action-Proj., control commands are converted into translation and rotation increments using the simulator scale; the resulting keypoints are then projected into the image. Lower average displacement error (ADE) is better.
-
-| Setting | Motion ADE (px) | Action-Proj. ADE (px) | ADE reduction |
-| --- | ---: | ---: | ---: |
-| ID | 5.63 | 77.56 | 92.75% |
-| OOD | 9.38 | 63.86 | 85.31% |
 
 Predicted motion estimates the resulting execution substantially more accurately in both ID and OOD settings. The OOD error is higher, while its advantage over action projection remains.
 
